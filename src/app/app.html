@@ -1,0 +1,61 @@
+<main class="page-shell">
+  <header class="hero">
+    <p class="eyebrow">KANAZAWA TRADITIONAL GAME</p>
+    <h1><span class="title-main">旗源平</span><span class="title-sub">点数早見表</span></h1>
+    <p class="intro">二つのサイコロの目を選ぶと、<br>唱え方と点数がすぐにわかります。</p>
+  </header>
+
+  <section class="selector-panel" aria-labelledby="selector-title">
+    <div class="section-heading">
+      <div>
+        <p class="section-kicker">ROLL THE DICE</p>
+        <h2 id="selector-title">サイコロの数字を選ぶ</h2>
+      </div>
+      <button class="clear-button" type="button" (click)="clear()">クリア</button>
+    </div>
+
+    <div class="roll-block">
+      <h3><span>壱</span> 1投目</h3>
+      <div class="dice-grid" role="group" aria-label="1投目のサイコロ">
+        @for (face of diceFaces; track face) {
+          <button class="die" type="button" [class.selected]="firstRoll() === face" [attr.aria-pressed]="firstRoll() === face" (click)="selectRoll(1, face)">
+            <img class="die-image" [src]="'/assets/dice-' + face + '.png'" alt="" aria-hidden="true">
+            <span class="sr-only">{{ face }}</span>
+          </button>
+        }
+      </div>
+    </div>
+
+    <div class="roll-block">
+      <h3><span>弐</span> 2投目</h3>
+      <div class="dice-grid" role="group" aria-label="2投目のサイコロ">
+        @for (face of diceFaces; track face) {
+          <button class="die" type="button" [class.selected]="secondRoll() === face" [attr.aria-pressed]="secondRoll() === face" (click)="selectRoll(2, face)">
+            <img class="die-image" [src]="'/assets/dice-' + face + '.png'" alt="" aria-hidden="true">
+            <span class="sr-only">{{ face }}</span>
+          </button>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="result-section" aria-live="polite">
+    @if (selectedResult(); as result) {
+      <div class="result-heading">
+        <p class="section-kicker">YOUR RESULT</p>
+        <h2>判定結果</h2>
+        <p class="combination">{{ firstRoll() }} <b>×</b> {{ secondRoll() }}</p>
+      </div>
+      <div class="result-card">
+        <div class="chant-area"><span class="label">唱え方</span><strong>{{ result.chant }}</strong></div>
+        <dl class="result-details">
+          <div><dt>もらえる旗</dt><dd>{{ result.flags }}</dd></div>
+          <div><dt>点数換算</dt><dd [class.negative]="result.points < 0">{{ result.points > 0 ? '+' : '' }}{{ result.points }}<small> 点</small></dd></div>
+          <div><dt>連続投下</dt><dd [class.continue]="result.canContinue">{{ result.canContinue ? '○' : '×' }}</dd></div>
+        </dl>
+      </div>
+    } @else {
+      <div class="empty-state"><span class="empty-mark">＋</span><p>サイコロの数字を入力して下さい</p><small>1投目と2投目を選択してください</small></div>
+    }
+  </section>
+</main>

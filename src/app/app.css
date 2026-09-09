@@ -1,0 +1,30 @@
+:host { display: block; }
+
+.page-shell { max-width: 720px; margin: 0 auto; padding: 0 20px 48px; }
+.hero { color: #f7f0dc; padding: 24px 4px 20px; }
+.eyebrow, .section-kicker { margin: 0 0 6px; color: #d4a247; font-size: 11px; font-weight: 700; letter-spacing: .18em; }
+.hero h1 { display: flex; align-items: baseline; flex-wrap: wrap; gap: .28em; margin: 0; color: #fff9ea; font-size: clamp(38px, 12vw, 64px); line-height: .92; letter-spacing: .04em; }
+.hero h1 .title-main { color: #fff9ea; }
+.hero h1 .title-sub { color: #edc46b; font-size: .72em; white-space: nowrap; }
+.intro { margin: 12px 0 0; color: #b9c9bd; font-size: 14px; line-height: 1.65; }
+.selector-panel, .result-section { border-top: 1px solid #426359; }
+.selector-panel { padding: 24px 0 26px; }
+.section-heading, .result-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }
+h2 { margin: 0; color: #fff9ea; font-size: 22px; letter-spacing: .06em; }
+.clear-button { flex: 0 0 auto; border: 1px solid #688578; border-radius: 3px; background: transparent; color: #d6e0d5; padding: 8px 14px; font: inherit; font-size: 13px; cursor: pointer; }
+.clear-button:hover, .clear-button:focus-visible { border-color: #edc46b; color: #edc46b; }
+.roll-block { margin-top: 26px; }
+.roll-block h3 { display: flex; align-items: center; gap: 8px; margin: 0 0 10px; color: #d7e2d9; font-size: 14px; font-weight: 500; }
+.roll-block h3 span { display: grid; place-items: center; width: 24px; height: 24px; border-radius: 50%; background: #d4a247; color: #173b35; font-size: 12px; font-weight: 700; }
+.dice-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; }
+.die { position: relative; display: grid; place-items: center; aspect-ratio: 1; min-height: 46px; border: 1px solid #aeb8ad; border-radius: 5px; background: #f7f0dc; cursor: pointer; transition: transform .15s ease, background .15s ease, border-color .15s ease, box-shadow .15s ease, opacity .15s ease; }
+.die:not(.selected) { opacity: .72; }
+.die:hover { transform: translateY(-2px); border-color: #edc46b; }
+.die.selected { border: 2px solid #edc46b; outline: 2px solid rgba(237, 196, 107, .3); outline-offset: 2px; background: #fff9ea; box-shadow: 0 5px 0 #8f6424; opacity: 1; transform: translateY(-2px); }
+.die.selected::after { content: '✓'; position: absolute; top: 5px; right: 5px; display: grid; place-items: center; width: 21px; height: 21px; border: 2px solid #173b35; border-radius: 50%; background: #edc46b; color: #173b35; font-size: 13px; font-weight: 700; line-height: 1; }
+.die-image { display: block; width: 74%; height: 74%; object-fit: contain; }
+.result-section { padding-top: 25px; }.result-heading { align-items: flex-end; }.result-heading .section-kicker { margin-bottom: 5px; }.combination { margin: 0; color: #edc46b; font-size: 24px; font-weight: 700; }.combination b { color: #829b8d; font-size: 14px; }
+.result-card { margin-top: 18px; overflow: hidden; border: 1px solid #426359; border-radius: 5px; background: #f7f0dc; color: #173b35; }.chant-area { padding: 23px 20px 20px; border-bottom: 1px solid #d8d5c5; }.label { display: block; margin-bottom: 8px; color: #718077; font-size: 11px; letter-spacing: .12em; }.chant-area strong { font-size: clamp(23px, 7vw, 34px); letter-spacing: .08em; }.result-details { display: grid; grid-template-columns: 1fr 1fr 1fr; margin: 0; }.result-details div { padding: 16px 13px; border-right: 1px solid #d8d5c5; }.result-details div:last-child { border: 0; }.result-details dt { color: #718077; font-size: 11px; }.result-details dd { margin: 8px 0 0; font-size: 17px; font-weight: 700; }.result-details dd.negative { color: #b64b36; }.result-details dd.continue { color: #28806b; font-size: 27px; }.result-details small { font-size: 11px; }
+.empty-state { display: grid; place-items: center; padding: 52px 20px 40px; color: #aabdb0; text-align: center; }.empty-mark { display: grid; place-items: center; width: 48px; height: 48px; margin-bottom: 17px; border: 1px solid #55766a; border-radius: 50%; color: #edc46b; font-size: 24px; }.empty-state p { margin: 0; color: #f7f0dc; font-size: 16px; }.empty-state small { margin-top: 8px; font-size: 12px; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+@media (max-width: 420px) { .page-shell { padding-inline: 16px; }.dice-grid { gap: 6px; }.die { min-height: 42px; }.result-details dd { font-size: 15px; } }

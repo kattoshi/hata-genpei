@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.angular/
+.env
+.env.*
+!.env.example
+
+# Local editor and OS files
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/tasks.json
+.DS_Store
