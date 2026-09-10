@@ -16,11 +16,17 @@
             "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "css",
+            "serviceWorker": "ngsw-config.json",
             "assets": [
               {
                 "glob": "**/*",
                 "input": "src/assets",
                 "output": "assets"
+              },
+              {
+                "glob": "**/*",
+                "input": "src/pwa",
+                "output": "."
               },
               {
                 "glob": "robots.txt",

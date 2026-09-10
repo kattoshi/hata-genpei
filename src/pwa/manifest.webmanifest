@@ -1,0 +1,19 @@
+{
+  "name": "旗源平 点数早見表",
+  "short_name": "旗源平",
+  "description": "旗源平のサイコロ結果と点数をすぐに確認できます。",
+  "lang": "ja",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#173b35",
+  "theme_color": "#173b35",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "icons/hatagenpei.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
